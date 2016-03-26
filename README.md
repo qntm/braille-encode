@@ -43,6 +43,12 @@ console.log(buf.equals(buf2)); // true
 
 For comparison, "hello world" in Braille is "⠓⠑⠇⠇⠕⠀⠺⠕⠗⠇⠙".
 
+## Efficiency
+
+Given 1MB of input, `braille-encode` returns 3.00MB of UTF-8, 2.00MB of UTF-16 or 4.00MB of UTF-32.
+
+Compare Base64, which returns 1.33MB of UTF-8, 2.67MB of UTF-16 or 5.33MB of UTF-32.
+
 ## Notes on dot numbering and significance
 
 I numbered the eight Braille dots as follows:
