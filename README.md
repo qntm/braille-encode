@@ -73,20 +73,4 @@ Which would suggest that the significance of each dot is:
      4   32
     64  128
 
-For example, the byte 0b11110000 would be represented as "⣰". However, this would be relatively difficult to understand.
-
-Since Braille occupies a contiguous range of Unicode code points from U+2800 to U+28FF inclusive, another approach would have been to simply add/subtract 0x2800 from the hex. However, [the Unicode chart](http://www.unicode.org/charts/PDF/U2800.pdf) populates the dots in this order:
-
-    5 8
-    6 1
-    7 2
-    3 4
-
-This gives the following significance to each dot:
-
-    16  128
-    32    1
-    64    2
-     4    8
- 
-So, for example, 0b01010101 would be "⡕". Again, not very readable.
+For example, the byte 0b11110000 would be represented as "⣰". However, this would be relatively difficult to understand. Since [the Unicode chart](http://www.unicode.org/charts/PDF/U2800.pdf) uses this ordering, this means encoding/decoding *isn't* a matter of simply taking the hex and adding/subtracting 0x2800.
