@@ -32,16 +32,14 @@ npm install braille-encode
 ```js
 var brailleEncode = require("braille-encode");
 
-var buf = new Buffer("hello world"); // 11 bytes of UTF-8
+var buf = new Buffer("d41d8cd98f00b204e9800998ecf8427e", "hex");
 
 var str = brailleEncode.encode(buf); 
-console.log(str); // "⠎⢖⠞⠞⢾⠄⣶⢾⡦⠞⠖"
+console.log(str); // "⡓⣘⠙⣋⢹⠀⡥⠐⢏⠁⢈⡉⠟⡏⠢⡾"
 
 var buf2 = brailleEncode.decode(str);
 console.log(buf.equals(buf2)); // true
 ```
-
-For comparison, "hello world" in Braille is "⠓⠑⠇⠇⠕⠀⠺⠕⠗⠇⠙".
 
 ## Efficiency
 
