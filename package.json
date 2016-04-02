@@ -1,6 +1,6 @@
 {
 	"name": "braille-encode",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Represent binary data as Braille",
 	"homepage": "https://github.com/ferno/braille-encode",
 	"repository": {
