@@ -1,26 +1,29 @@
 {
-	"name": "braille-encode",
-	"version": "1.0.2",
-	"description": "Represent binary data as Braille",
-	"homepage": "https://github.com/ferno/braille-encode",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/ferno/braille-encode.git"
-	},
-	"main": "index.js",
-	"keywords": [
-		"braille",
-		"encoding",
-		"unicode",
-		"text",
-		"decoding",
-		"binary",
-		"useless"
-	],
-	"scripts": {
-		"test": "node test.js"
-	},
-	"dependencies": [],
-	"author": "ferno",
-	"license": "MIT"
+  "name": "braille-encode",
+  "version": "1.0.3",
+  "description": "Represent binary data as Braille",
+  "homepage": "https://github.com/ferno/braille-encode",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ferno/braille-encode.git"
+  },
+  "main": "index.js",
+  "keywords": [
+    "braille",
+    "encoding",
+    "unicode",
+    "text",
+    "decoding",
+    "binary",
+    "useless"
+  ],
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "dependencies": [],
+  "author": "ferno",
+  "license": "MIT",
+  "devDependencies": {
+    "glob": "^7.1.1"
+  }
 }
