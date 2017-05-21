@@ -1,11 +1,11 @@
 {
   "name": "braille-encode",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Represent binary data as Braille",
-  "homepage": "https://github.com/ferno/braille-encode",
+  "homepage": "https://github.com/qntm/braille-encode",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ferno/braille-encode.git"
+    "url": "git://github.com/qntm/braille-encode.git"
   },
   "main": "index.js",
   "keywords": [
@@ -21,7 +21,7 @@
     "test": "node test/test.js"
   },
   "dependencies": [],
-  "author": "ferno",
+  "author": "qntm",
   "license": "MIT",
   "devDependencies": {
     "glob": "^7.1.1"
