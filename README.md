@@ -37,7 +37,7 @@ const uint8Array = Uint8Array.from([
   0xe9, 0x80, 0x09, 0x98, 0xec, 0xf8, 0xf1, 0x1f
 ])
 
-const str = encode(buf)
+const str = encode(uint8Array)
 console.log(str) // "⡓⣘⠙⣋⢹⠀⡥⠐⢏⠁⢈⡉⠟⡏⠢⡾"
 
 const uint8Array2 = decode(str)
