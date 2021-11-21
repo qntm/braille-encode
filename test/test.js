@@ -1,23 +1,26 @@
-var brailleEncode = require("../index.js");
-var fs = require("fs");
-var glob = require("glob");
+/* eslint-env mocha */
 
-var pairsDir = "./test/pairs";
-glob("./test/pairs/**/*.bin", function(err, files) {
-	if(err) {
-		throw Error(err);
-	}
-	files.forEach(function(fileName) {
-		var caseName = fileName.substring(0, fileName.length - ".bin".length);
-		var binary = fs.readFileSync(caseName + ".bin");
-		var text = fs.readFileSync(caseName + ".txt", "utf8");
-		console.log(caseName);
-		if(!brailleEncode.decode(text).equals(binary)) {
-			throw Error("Decode error");
-		}
-		if(brailleEncode.encode(binary) !== text) {
-			throw Error("Encode error");
-		}
-	});
-	console.log("OK");
-});
+import assert from 'assert'
+import fs from 'fs'
+import glob from 'glob'
+
+import { encode, decode } from '../src/index.js'
+
+describe('braille-encode', () => {
+  it('fails', () => {
+    assert.throws(() => decode('abc'), Error('Cannot decode character \'97\', not Braille.'))
+  })
+
+  describe('works', () => {
+    const files = glob.sync('./test/pairs/**/*.bin')
+    files.forEach((fileName, i) => {
+      const caseName = fileName.substring(0, fileName.length - '.bin'.length)
+      it(caseName, () => {
+        const uint8Array = Uint8Array.from(fs.readFileSync(caseName + '.bin'))
+        const text = fs.readFileSync(caseName + '.txt', 'utf8')
+        assert.deepStrictEqual(decode(text), uint8Array)
+        assert.deepStrictEqual(encode(uint8Array), text)
+      })
+    })
+  })
+})

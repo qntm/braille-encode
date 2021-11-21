@@ -1,13 +1,13 @@
 {
   "name": "braille-encode",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Represent binary data as Braille",
   "homepage": "https://github.com/qntm/braille-encode",
   "repository": {
     "type": "git",
     "url": "git://github.com/qntm/braille-encode.git"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "keywords": [
     "braille",
     "encoding",
@@ -18,12 +18,22 @@
     "useless"
   ],
   "scripts": {
-    "test": "node test/test.js"
+    "mocha": "c8 --100 mocha",
+    "postpublish": "npm version patch && git push",
+    "standard": "standard",
+    "test": "npm run standard && npm run mocha"
   },
-  "dependencies": [],
+  "dependencies": {},
   "author": "qntm",
   "license": "MIT",
   "devDependencies": {
-    "glob": "^7.1.1"
-  }
+    "c8": "^7.10.0",
+    "glob": "^7.1.1",
+    "mocha": "^9.1.3",
+    "standard": "^16.0.4"
+  },
+  "type": "module",
+  "files": [
+    "src"
+  ]
 }
