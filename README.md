@@ -30,15 +30,18 @@ npm install braille-encode
 ## Usage
 
 ```js
-var brailleEncode = require("braille-encode");
+import { encode, decode } from 'braille-encode'
 
-var buf = new Buffer("d41d8cd98f00b204e9800998ecf8427e", "hex");
+const uint8Array = Uint8Array.from([
+  0xd4, 0x1d, 0x8c, 0xd9, 0x8f, 0x00, 0xb2, 0x04,
+  0xe9, 0x80, 0x09, 0x98, 0xec, 0xf8, 0xf1, 0x1f
+])
 
-var str = brailleEncode.encode(buf); 
-console.log(str); // "⡓⣘⠙⣋⢹⠀⡥⠐⢏⠁⢈⡉⠟⡏⠢⡾"
+const str = encode(buf)
+console.log(str) // "⡓⣘⠙⣋⢹⠀⡥⠐⢏⠁⢈⡉⠟⡏⠢⡾"
 
-var buf2 = brailleEncode.decode(str);
-console.log(buf.equals(buf2)); // true
+const uint8Array2 = decode(str)
+console.log(uint8Array2) // same as `uint8Array`
 ```
 
 ## Efficiency
