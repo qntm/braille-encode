@@ -30,7 +30,7 @@
     "c8": "^7.10.0",
     "glob": "^8.0.1",
     "mocha": "^10.0.0",
-    "standard": "^16.0.4"
+    "standard": "^17.0.0"
   },
   "type": "module",
   "files": [
