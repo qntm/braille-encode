@@ -28,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "c8": "^7.10.0",
-    "glob": "^7.1.1",
+    "glob": "^8.0.1",
     "mocha": "^10.0.0",
     "standard": "^16.0.4"
   },
