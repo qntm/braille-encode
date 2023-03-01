@@ -2,7 +2,7 @@
 
 import assert from 'assert'
 import fs from 'fs'
-import glob from 'glob'
+import { globSync } from 'glob'
 
 import { encode, decode } from '../src/index.js'
 
@@ -12,7 +12,7 @@ describe('braille-encode', () => {
   })
 
   describe('works', () => {
-    const files = glob.sync('./test/pairs/**/*.bin')
+    const files = globSync('./test/pairs/**/*.bin')
     files.forEach((fileName, i) => {
       const caseName = fileName.substring(0, fileName.length - '.bin'.length)
       it(caseName, () => {
