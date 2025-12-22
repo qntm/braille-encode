@@ -1,7 +1,8 @@
 /* eslint-env mocha */
 
-import assert from 'assert'
-import fs from 'fs'
+import assert from 'node:assert/strict'
+import fs from 'node:fs'
+
 import { globSync } from 'glob'
 
 import { encode, decode } from '../src/index.js'
@@ -18,8 +19,8 @@ describe('braille-encode', () => {
       it(caseName, () => {
         const uint8Array = Uint8Array.from(fs.readFileSync(caseName + '.bin'))
         const text = fs.readFileSync(caseName + '.txt', 'utf8')
-        assert.deepStrictEqual(decode(text), uint8Array)
-        assert.deepStrictEqual(encode(uint8Array), text)
+        assert.deepEqual(decode(text), uint8Array)
+        assert.deepEqual(encode(uint8Array), text)
       })
     })
   })
