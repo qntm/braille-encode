@@ -1,7 +1,6 @@
-/* eslint-env mocha */
-
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
+import { describe, it } from 'node:test'
 
 import { globSync } from 'glob'
 
