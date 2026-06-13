@@ -8,7 +8,7 @@ import { encode, decode } from '../src/index.js'
 
 describe('braille-encode', () => {
   it('fails', () => {
-    assert.throws(() => decode('abc'), Error('Cannot decode character \'97\', not Braille.'))
+    assert.throws(() => decode('abc'), Error('Cannot decode character \'a\' (U+0061), not Braille.'))
   })
 
   describe('works', () => {
