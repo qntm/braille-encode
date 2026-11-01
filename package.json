@@ -27,7 +27,7 @@
   "author": "qntm",
   "license": "MIT",
   "devDependencies": {
-    "glob": "^13.0.0",
+    "glob": "^14.0.3",
     "standard": "^17.0.0"
   },
   "type": "module",
